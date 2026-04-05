@@ -1,6 +1,93 @@
 @Tasker.Api_HostAddress = http://localhost:5180
 
-GET {{Tasker.Api_HostAddress}}/weatherforecast/
+@TaskId = t-1
+@SubtaskId = 67890
+@UserId = u-101
+
+### Get all tasks
+GET {{Tasker.Api_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+### Create a new task
+POST {{Tasker.Api_HostAddress}}/api/tasks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Learn .NET 11",
+  "description": "Explore the new features in .NET 9 and C# 13"
+}
+
+###
+
+### Get task by ID
+GET {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
+Accept: application/json
+
+###
+
+### Update a task
+PUT {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Learn EF Core1",
+  "description": "Understand migrations and queries",
+  "status": "InProgress"
+}
+
+###
+
+### Assign a task
+PATCH {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/assign
+Content-Type: application/json
+Accept: application/json
+
+{
+  "userId": "{{UserId}}"
+}
+
+###
+
+### Get subtasks for a task
+GET {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks
+Accept: application/json
+
+###
+
+### Create a subtask
+POST {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Read the documentation"
+}
+
+###
+
+### Update a subtask
+PUT {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Watch a tutorial instead"
+}
+
+###
+
+### Delete a subtask
+DELETE {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
+Accept: application/json
+
+###
+
+### Delete a task
+DELETE {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
 Accept: application/json
 
 ###
