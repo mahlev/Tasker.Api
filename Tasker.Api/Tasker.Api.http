@@ -1,17 +1,17 @@
-@Tasker.Api_HostAddress = http://localhost:5180
+@HostAddress = http://localhost:5180
 
 @TaskId = t-1
 @SubtaskId = 67890
 @UserId = u-101
 
 ### Get all tasks
-GET {{Tasker.Api_HostAddress}}/api/tasks
+GET {{HostAddress}}/api/tasks
 Accept: application/json
 
 ###
 
 ### Create a new task
-POST {{Tasker.Api_HostAddress}}/api/tasks
+POST {{HostAddress}}/api/tasks
 Content-Type: application/json
 Accept: application/json
 
@@ -23,13 +23,13 @@ Accept: application/json
 ###
 
 ### Get task by ID
-GET {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
+GET {{HostAddress}}/api/tasks/{{TaskId}}
 Accept: application/json
 
 ###
 
 ### Update a task
-PUT {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
+PUT {{HostAddress}}/api/tasks/{{TaskId}}
 Content-Type: application/json
 Accept: application/json
 
@@ -42,7 +42,7 @@ Accept: application/json
 ###
 
 ### Assign a task
-PATCH {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/assign
+PATCH {{HostAddress}}/api/tasks/{{TaskId}}/assign
 Content-Type: application/json
 Accept: application/json
 
@@ -53,13 +53,13 @@ Accept: application/json
 ###
 
 ### Get subtasks for a task
-GET {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks
+GET {{HostAddress}}/api/tasks/{{TaskId}}/subtasks
 Accept: application/json
 
 ###
 
 ### Create a subtask
-POST {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks
+POST {{HostAddress}}/api/tasks/{{TaskId}}/subtasks
 Content-Type: application/json
 Accept: application/json
 
@@ -70,7 +70,7 @@ Accept: application/json
 ###
 
 ### Update a subtask
-PUT {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
+PUT {{HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
 Content-Type: application/json
 Accept: application/json
 
@@ -81,13 +81,13 @@ Accept: application/json
 ###
 
 ### Delete a subtask
-DELETE {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
+DELETE {{HostAddress}}/api/tasks/{{TaskId}}/subtasks/{{SubtaskId}}
 Accept: application/json
 
 ###
 
 ### Delete a task
-DELETE {{Tasker.Api_HostAddress}}/api/tasks/{{TaskId}}
+DELETE {{HostAddress}}/api/tasks/{{TaskId}}
 Accept: application/json
 
 ###
